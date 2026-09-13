@@ -75,7 +75,6 @@ VLSI-Project-03-DFF-Counter-Verification
 
 ## 🛠️ Tools Used
 * **Verilog HDL** (Design)
-* **SystemVerilog Assertions - SVA** (Verification)
 * **Xilinx Vivado 2020.1**
 * **Behavioral Simulation** (Vivado XSim)
 
@@ -83,7 +82,7 @@ VLSI-Project-03-DFF-Counter-Verification
 
 ## 🔄 Design & Verification Flow
 1. **Design Code (RTL):** Development of the structural counter using instantiated Verilog DFF modules.
-2. **Testbench Code (SVA):** Creation of a robust SystemVerilog testbench defining temporal assertions (e.g., `assert property (@(posedge clk) en |=> count == $past(count) + 1)`).
+2. **Testbench Code:** Creation of a robust SystemVerilog testbench defining temporal assertions (e.g., `assert property (@(posedge clk) en |=> count == $past(count) + 1)`).
 3. **RTL Synthesis & Schematic:** Compiling the RTL code in Xilinx Vivado to generate a hardware schematic showing flip-flop allocation.
 4. **Simulation Waveform:** Executing the testbench to visually and automatically verify sequential transitions.
 
@@ -100,12 +99,18 @@ Simulation Completed
 ```
 
 ### RTL Schematic
-![RTL Schematic](schematic.png)
+<img width="1920" height="1080" alt="Shematic_main" src="https://github.com/user-attachments/assets/f3a2b00e-0f89-4e26-a46a-706d38b0cf64" />
+#INNER BLOCKS
+<img width="1920" height="1080" alt="U1" src="https://github.com/user-attachments/assets/cbe04ea8-5110-41aa-8a76-b17714ca36fe" />
+<img width="1920" height="1080" alt="U2" src="https://github.com/user-attachments/assets/2a8f929b-fc84-4a92-b77e-ee0a5ec1829a" />
+
+
 
 *> Displays the elaborated design showing the DFF instances wired to create the counter logic.*
 
 ### Waveform Analysis
-![Simulation Waveform](waveform.png)
+<img width="1920" height="1080" alt="Simulation" src="https://github.com/user-attachments/assets/127e0ef6-4650-4606-8b21-5f7ba8ad9da7" />
+
 
 **Waveform Verification**
 
@@ -123,7 +128,8 @@ Q     : 0 → 1
 ```
 
 ### TCL Console Output
-![TCL Console Output](tcl_console.png)
+<img width="1565" height="362" alt="TCLconsole" src="https://github.com/user-attachments/assets/e887f226-19ae-41b6-89fe-369444459e67" />
+
 
 **Understanding the TCL Console & Assertions:**
 The Vivado TCL console is crucial for Assertion-Based Verification. It captures the real-time execution logs of the SystemVerilog assertions.
