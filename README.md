@@ -100,7 +100,7 @@ Simulation Completed
 
 ### RTL Schematic
 <img width="1920" height="1080" alt="Shematic_main" src="https://github.com/user-attachments/assets/f3a2b00e-0f89-4e26-a46a-706d38b0cf64" />
-#INNER BLOCKS
+**INNER BLOCKS**
 <img width="1920" height="1080" alt="U1" src="https://github.com/user-attachments/assets/cbe04ea8-5110-41aa-8a76-b17714ca36fe" />
 <img width="1920" height="1080" alt="U2" src="https://github.com/user-attachments/assets/2a8f929b-fc84-4a92-b77e-ee0a5ec1829a" />
 
