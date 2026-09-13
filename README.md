@@ -60,7 +60,7 @@ DFF-Counter-Verification
 ├── main.v
   ├── dff.v
   ├── counter.v
-├── top_tb.v
+├── main_tb.v
 ├──Simulation.png
 ├── Schematic.png
         ├──U1.png
