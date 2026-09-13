@@ -65,6 +65,7 @@ DFF-Counter-Verification
 ├── Schematic.png
         ├──U1.png
         ├──U2.png
+├── TCL console.png
 │
 └── README.md
 ```
