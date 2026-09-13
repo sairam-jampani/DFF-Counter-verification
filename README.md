@@ -55,19 +55,16 @@ The design incorporates synchronous logic and enabling controls, monitored by te
 ## 📂 Project Structure
 
 ```text
-VLSI-Project-03-DFF-Counter-Verification
+DFF-Counter-Verification
 |
-├── dff.v
-├── counter.v
-├── top.v
+├── main.v
+  ├── dff.v
+  ├── counter.v
 ├── top_tb.v
-├── screenshots
-│   ├── project_structure.png
-│   ├── rtl_design.png
-│   ├── testbench.png
-│   ├── waveform.png
-│   └── pass_report.png
-|
+├──Simulation.png
+├── Schematic.png
+        ├──U1.png
+        ├──U2.png
 └── README.md
 ```
 
