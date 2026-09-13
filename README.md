@@ -2,7 +2,7 @@
 
 <p align="left">
   <img src="https://img.shields.io/badge/Design-Verilog-blue.svg" alt="Design Language">
-  
+  <img src="https://img.shields.io/badge/Verification-Verilog%20(SVA)-blueviolet.svg" alt="Verification Language">
   <img src="https://img.shields.io/badge/Tool-Xilinx%20Vivado%202020.1-orange.svg" alt="Tool">
   <img src="https://img.shields.io/badge/Design%20Flow-Front--End-brightgreen.svg" alt="Flow">
 </p>
