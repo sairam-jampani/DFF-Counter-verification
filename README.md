@@ -9,7 +9,7 @@
 
 ---
 
-## 📖 Project Description
+## 📖 Design Description
 This project implements a foundational digital Counter built upon D-Flip Flops (DFF). The core hardware modules are designed in **Verilog HDL**, while the verification environment utilizes advanced **SystemVerilog Assertions (SVA)**. Assertions are critical in modern verification flows to continuously monitor temporal behaviors and immediately flag illegal states. This repository demonstrates how to bind assertions to a design to automatically verify reset sequences, enable toggles, and sequential counting logic.
 
 ---
@@ -40,24 +40,11 @@ The design incorporates synchronous logic and enabling controls, monitored by te
 
 ---
 
-## 📂 Project Files & Design Hierarchy
+## 📂 Project Structure
 
-The design follows a structural hierarchy where the top-level counter instantiates individual DFF modules.
-
-**Directory Structure:**
-> 📁 `rtl/`
->  ├── `counter_top.v` (Top-level Counter Design)
->  └── `dff.v` (Base D-Flip Flop Module)
->
-> 📁 `sim/`
->  └── `counter_tb.sv` (SystemVerilog Testbench with SVA)
-
-**Design Hierarchy Structure:**
-* `counter_top`
-  * `dff_inst_0` (LSB Flip-Flop)
-  * `dff_inst_1`
-  * `dff_inst_2`
-  * `dff_inst_3` (MSB Flip-Flop)
+* **`dff.v`** → Base D-Flip Flop Module
+* **`counter_top.v`** → Top-level Counter Design (Instantiates DFFs)
+* **`counter_tb.sv`** → SystemVerilog Testbench with Assertions (SVA)
 
 ---
 
@@ -77,18 +64,16 @@ The design follows a structural hierarchy where the top-level counter instantiat
 
 ---
 
-## 🧪 Simulation Results
+## 🧪 Expected Simulation Output
 
-The testbench systematically applies scenarios while SVAs run concurrently in the background:
+The testbench systematically applies scenarios while SVAs run concurrently in the background. The expected output is a clean simulation run with zero assertion failures in the TCL console, matching the following behaviors:
 
-| Test Scenario | SVA Rule Checked | Verification Status |
+| Test Scenario | SVA Rule Checked | Expected Verification Status |
 | :--- | :--- | :--- |
 | **System Reset** | If `rst == 1`, then `count == 0` on the next clock. | Pass |
 | **Normal Count** | If `en == 1`, then `count` increments by 1. | Pass |
 | **Hold State** | If `en == 0`, then `count` remains unchanged. | Pass |
 | **Overflow Roll-over** | If `count == MAX`, then next `count == 0`. | Pass |
-
-**All assertions and corner cases were successfully verified through behavioral simulation.**
 
 ### RTL Schematic
 ![RTL Schematic](schematic.png)
@@ -98,13 +83,13 @@ The testbench systematically applies scenarios while SVAs run concurrently in th
 ### Waveform Analysis
 ![Simulation Waveform](waveform.png)
 
-**Understanding the Waveform:**
-The simulation waveform visually confirms the sequential logic and timing. 
+**Waveform Verification:**
+The simulation waveform visually confirms the sequential logic and timing defined by the assertions. 
 * **`clk`:** The driving clock for the DFFs.
 * **`rst` & `en`:** Control signals dictating initialization and counting states.
 * **`count`:** The resulting bus value incrementing predictably.
 
-*Example:* As shown in the simulation, when `en` is pulled low, the `count` bus immediately holds its previous value across multiple clock cycles, perfectly satisfying the written assertion rules.
+*Verification Check:* As shown in the simulation, when `en` is pulled low, the `count` bus immediately holds its previous value across multiple clock cycles, perfectly satisfying the written assertion rules.
 
 ### TCL Console Output
 ![TCL Console Output](tcl_console.png)
